@@ -1,4 +1,4 @@
-nginx: nginx -p`pwd`/nginx -c development.conf
-cerebro: pserve --reload cerebro/development.ini
-neuron: neuron --config=neuron/development.ini --debug --log_to_stderr
+nginx: nginx -p`pwd` -c config/development.nginx.conf
+cerebro: pserve --reload config/development.cerebro.ini
+neuron: neuron --config=config/development.neuron.ini --debug --log_to_stderr
 redis: redis-server

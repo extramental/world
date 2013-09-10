@@ -23,4 +23,4 @@ echo "Setting up Postgres for the first time..."
 createdb -hlocalhost cerebro-development
 
 echo "Initializing Cerebro database..."
-initialize_cerebro_db cerebro/development.ini
+initialize_cerebro_db config/development.ini

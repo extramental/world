@@ -1,6 +1,8 @@
 [submodule "cerebro"]
 	path = cerebro
 	url = git@github.com:extramental/cerebro
+	branch = master
 [submodule "neuron"]
 	path = neuron
 	url = git@github.com:extramental/neuron
+	branch = master

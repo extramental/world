@@ -1,4 +1,4 @@
-pushd neuron/server
+pushd neuron
 python setup.py develop
 popd
 

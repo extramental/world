@@ -11,8 +11,13 @@ git submodule update
 echo "Installing Python dependencies..."
 pip install -r requirements.txt
 
-python neuron/setup.py develop
-python cerebro/setup.py develop
+pushd neuron
+python setup.py develop
+popd
+
+pushd cerebro
+python setup.py develop
+popd
 
 echo "Installing global Node.js dependencies..."
 sudo npm install -g uglify-js less bower

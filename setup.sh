@@ -1,20 +1,18 @@
-trap exit SIGINT;
+trap exit SIGINT
 
 if [ "x$VIRTUAL_ENV" = x ]; then
     echo "Please create a Python virtual environment before continuing."
     exit 1;
 fi
 
+git submodule init
+git submodule update
+
 echo "Installing Python dependencies..."
 pip install -r requirements.txt
 
-pushd neuron
-python setup.py develop
-popd
-
-pushd cerebro
-python setup.py develop
-popd
+python neuron/setup.py develop
+python cerebro/setup.py develop
 
 echo "Installing global Node.js dependencies..."
 sudo npm install -g uglify-js less bower

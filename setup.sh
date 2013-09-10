@@ -1,3 +1,13 @@
+trap exit SIGINT;
+
+if [ "x$VIRTUAL_ENV" = x ]; then
+    echo "Please create a Python virtual environment before continuing."
+    exit 1;
+fi
+
+echo "Installing Python dependencies..."
+pip install -r requirements.txt
+
 pushd neuron
 python setup.py develop
 popd
